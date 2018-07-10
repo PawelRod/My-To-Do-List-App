@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To-Do App</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1"> <!--initial-scale=1-->
+        <link rel="stylesheet" type="text/css" media="screen" href="dom.css" />
+        <link href="dom.css" media="print" rel="stylesheet" type="text/css" >
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    </head>
+    <body>
+        <div class="logo-top">
+
+                <div class="logo">
+                    <img src="img/logo.png">
+                </div>
+                <!-- <h2>
+                    To-Do List
+                </h2>
+                <h2>
+                    Don't forget! Make things happen!
+                </h2> -->
+
+        </div>
+        <div id="invisible-wrapper"  class="no-print">
+            <canvas id="canvas" width="400px" height="400px">
+
+            </canvas>
+            <div class="clock-twine-left" >
+
+            </div>
+            <div class="clock-twine-right">
+
+            </div>
+            <div class="note-desk-red">
+                <img src="img/note-desk-red.png">
+            </div>
+            <div class="note-desk-green">
+                <img src="img/note-desk-green.png">
+            </div>
+        </div>
+        <div id="wrapper">
+            <img src="img/print-icon.png" id="print" class="nav-icons no-print" alt="Print">
+            <a href="javascript:genPDF()"><img src="img/download-icon.png" id="download" class="nav-icons no-print" alt="Download"></a>
+            <span id="datetime" class="datetime"></span>
+            <img class="pin" src="img\pin.png">
+            <div class="list" id="list">
+                <h1>
+                    <u>
+                        Checklist:
+                    </u>
+                    <div class="double-underline">
+
+                    </div>
+                </h1>
+                <ol>
+                    <li>
+                        <div class="list-border">Make some sandwitches to job.</div>
+                        <div class="delete no-print"><a href="#">X</a></div>
+                        <div class="done"><a href="#">V</a></div>
+                    </li>
+                    <li>
+                        <div class="list-border">Take a nap.</div>
+                        <div class="delete no-print"><a href="#">X</a></div>
+                        <div class="done"><a href="#">V</a></div>
+                    </li>
+                    <li>
+                        <div class="list-border">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam accusantium voluptas qui enim consectetur, dignissimos, voluptatibus eligendi doloremque velit quo error consequuntur suscipit necessitatibus possimus aliquid, illum quisquam natus repellendus.</div>
+                        <div class="delete no-print"><a href="#">X</a></div>
+                        <div class="done"><a href="#">V</a></div>
+                    </li>
+                </ol>
+            </div>
+            <!-- <form id="add-task" class="no-print">
+                <span><input type="text" placeholder="   Add task..."></span>
+                <a><img src="img/add-icon.png" class="add-task"></a>
+            </form> -->
+            <div class="add-task no-print">
+                <a href="#"><img src="img/add-icon.png" class="add-icon"></a>
+                <input type="text" id="MyInput" placeholder="   Add task...">
+            </div>
+        </div>
+        <script src="dom.js"></script>
+        <script type="text/javascript" src="html2canvas.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+    </body>
+</html>

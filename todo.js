@@ -1,3 +1,15 @@
+// DELETE TASK
+
+const list = document.querySelector("#list ol")
+
+list.addEventListener('click', function(e){
+  if (e.target.className == 'delete no-print') {
+    const li = e.target.parentElement;
+    list.removeChild(li);
+  }
+})
+
+
 // CHECKBOXES
 
 
@@ -12,7 +24,7 @@ function genPDF() {
       var doc = new jsPDF("p", "mm", "a4");
       var width = doc.internal.pageSize.width;    
       var height = doc.internal.pageSize.height;
-      doc.addImage(img, 'JPEG', -5, 20, width, height);
+      doc.addImage(img, 'JPEG', 8, 0, width, height);
       doc.save('my-to-do-list.pdf');
     }
   });

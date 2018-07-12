@@ -11,7 +11,6 @@
     </head>
     <body>
         <div class="logo-top">
-
                 <div class="logo">
                     <img src="img/logo.png">
                 </div>
@@ -21,7 +20,6 @@
                 <h2>
                     Don't forget! Make things happen!
                 </h2> -->
-
         </div>
         <div id="invisible-wrapper"  class="no-print">
             <canvas id="canvas" width="400px" height="400px">
@@ -47,39 +45,47 @@
             <img class="pin" src="img/pin.png">
             <div class="list" id="list">
                 <h1>
-                    <u>
-                        Checklist:
-                    </u>
+                    <u>Checklist:</u>
                     <div class="double-underline">
-
                     </div>
                 </h1>
                 <ol>
                     <li>
-                        <div class="list-border">Make some sandwitches to job.</div>
-                        <span class="delete no-print">X</span>
-                        <span class="done"><p>V</p></span>
+                        <div class="list-border">
+                            Make some sandwitches to job.
+                        </div>
+                        <span class="delete-button no-print">X</span>
+                        <span class="done-button">
+                            <p>V</p>
+                        </span>
                     </li>
                     <li>
-                        <div class="list-border">Take a nap.</div>
-                        <span class="delete no-print">X</span>
-                        <span class="done"><p>V</p></span>
+                        <div class="list-border">
+                            Take a nap.
+                        </div>
+                        <span class="delete-button no-print">X</span>
+                        <span class="done-button">
+                            <p>V</p>
+                        </span>
                     </li>
                     <li>
-                        <div class="list-border">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam accusantium voluptas qui enim consectetur, dignissimos, voluptatibus eligendi doloremque velit quo error consequuntur suscipit necessitatibus possimus aliquid, illum quisquam natus repellendus.</div>
-                        <span class="delete no-print">X</span>
-                        <span class="done"><p>V</p></span>
+                        <div class="list-border">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam accusantium voluptas qui enim consectetur, dignissimos, voluptatibus eligendi doloremque velit quo error consequuntur suscipit necessitatibus possimus aliquid, illum quisquam natus repellendus.
+                        </div>
+                        <span class="delete-button no-print">X</span>
+                        <span class="done-button">
+                            <p>V</p>
+                        </span>
                     </li>
                 </ol>
             </div>
-            <!-- <form id="add-task" class="no-print">
-                <span><input type="text" placeholder="   Add task..."></span>
-                <a><img src="img/add-icon.png" class="add-task"></a>
-            </form> -->
-            <div class="add-task no-print">
-                <a href="#"><img src="img/add-icon.png" class="add-icon"></a>
-                <input type="text" id="MyInput" placeholder="   Add task...">
-            </div>
+            <form id="add-task" class="no-print">
+                <button>
+                    Add
+
+                </button>
+                <input type="text" placeholder="   Write here..." />
+            </form>
         </div>
         <script src="todo.js"></script>
         <script type="text/javascript" src="html2canvas.js"></script>

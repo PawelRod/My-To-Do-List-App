@@ -1,9 +1,41 @@
-// DELETE TASK
+// ADD TASK
 
+const addForm = document.forms['add-task'];
 const list = document.querySelector("#list ol")
 
+addForm.addEventListener('submit', function(f){
+  f.preventDefault();
+
+  const value = addForm.querySelector('input[type="text"]').value;
+
+  const p = document.createElement('p');
+  const li = document.createElement('li');
+  const taskName = document.createElement('div');
+  const deleteBtn = document.createElement('span');
+  const doneBtn = document.createElement('span');
+
+  li.appendChild(taskName);
+  li.appendChild(deleteBtn);
+  li.appendChild(doneBtn);
+  doneBtn.appendChild(p);
+
+  deleteBtn.textContent = 'X';
+  p.textContent = 'V';
+  taskName.textContent = value;
+
+  taskName.classList.add('list-border');
+  deleteBtn.classList.add('delete-button', 'no-print');
+  doneBtn.classList.add('done-button');
+
+
+  list.appendChild(li);
+});
+
+
+// DELETE TASK
+
 list.addEventListener('click', function(e){
-  if (e.target.className == 'delete no-print') {
+  if (e.target.className == 'delete-button no-print') {
     const li = e.target.parentElement;
     list.removeChild(li);
   }
@@ -12,8 +44,16 @@ list.addEventListener('click', function(e){
 
 // CHECKBOXES
 
+const ol = document.querySelector('ol');
 
-
+ol.addEventListener('click', function(d){
+  if(d.target.className == 'done-button') {
+    const li = d.target.parentElement;
+    const v = d.target.children[0];
+    li.classList.toggle('checked');
+    v.classList.toggle('green-initial-display');
+  }
+});
 
 // PDF SCREENSHOT
 

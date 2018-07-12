@@ -168,6 +168,7 @@ h1 .double-underline {
 
 
 /* LI STUFF */
+
 ol {
     padding: 0 0 0 60px;
     margin: 0 0 40px 0;
@@ -177,43 +178,60 @@ li {
     padding-left: 20px;
     margin: 25px 0;
 }
-div.list-border {
+.list-border {
     border-bottom: .7px solid black;
     width: calc(100% - 38px);
     max-width: 700px;
 }
-span.delete,
-span.done {
+.checked {  /*JS*/
+    text-decoration: line-through;
+    color: green;
+    font-size: 16px;
+}
+
+.delete-button,
+.done-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-weight: 600;
     font-size: 17px;
     cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: inherit;
+    z-index: 9999;
 }
-span.delete {
+.delete-button {
     right: 0;
     color: red;
 }
-span.done {
+span.done-button {
+    position: absolute;
     left: -57px;
-    color: green;
     height: 20px;
     width: 20px;
     border: 2px green solid;
+    z-index: 9999;
+    background-color: none;
 }
-span.done p,
-span.delete p {
-    text-decoration: none;
-    color: inherit;
-}
-span.done p {
-    position: absolute;
+.done-button p {
     left: 1.5px;
-    top: -25.5px;
+    top: -9.5px;
     display: none;
+    /* z-index: 1; */
 }
-.add-task {
+p.green-initial-display { /*JS*/
+    margin: 0;
+    position: absolute;
+    color: green;
+    display: block;
+    z-index: 9999;
+    z-index: -1;
+    visibility: hidden;
+}
+
+#add-task {
     display:flex;
     /* flex-direction:row; */
     align-self: flex-end;
@@ -223,17 +241,20 @@ span.done p {
     left: 20px;
     bottom: 30px;
 }
-.add-icon {
+#add-task button {
     position: absolute;
     right: 46px;
     bottom: 5px;
-    width: 30px;
+    width: auto;
     height: 30px;
+    cursor: pointer;
+    float: right;
 }
+
 input[type=text],
 ::placeholder {
     height: 40px;
-    width:calc(100% - 180px);
+    width:calc(100% - 190px);
     /* min-width: 790px; */
     /* margin: 0 auto; */
     margin: 0px 87px 0px 10px;

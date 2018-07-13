@@ -187,6 +187,7 @@ li {
     text-decoration: line-through;
     color: green;
     font-size: 16px;
+    opacity: 0.7;
 }
 
 .delete-button,
@@ -205,6 +206,11 @@ li {
 .delete-button {
     right: 0;
     color: red;
+    transition: all .5s;
+}
+.delete-button:hover {
+    transition: all .5s;
+    font-size: 22px;
 }
 span.done-button {
     position: absolute;
@@ -228,7 +234,8 @@ p.green-initial-display { /*JS*/
     display: block;
     z-index: 9999;
     z-index: -1;
-    visibility: hidden;
+    opacity: 0.7;
+    /* visibility: hidden; */
 }
 
 #add-task {
@@ -243,12 +250,34 @@ p.green-initial-display { /*JS*/
 }
 #add-task button {
     position: absolute;
+    text-align: center;
+    margin: auto;
     right: 46px;
     bottom: 5px;
-    width: auto;
+    width: 30px;
     height: 30px;
     cursor: pointer;
-    float: right;
+    background: none;
+    border: 2px #FDFFEB solid;
+    transition: all .5s;
+    
+}
+#add-task button div {
+    position: relative;
+}
+#add-task button p {
+    position: absolute;
+    top: -22.2px;
+    right: -8px;
+    margin: 0;
+    font-size: 40px;
+    height: 30px;
+    width: 30px;
+}
+#add-task button:hover {
+    color: rgb(155, 155, 155);
+    transition: all 1s;
+    transform: rotate(360deg);
 }
 
 input[type=text],

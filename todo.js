@@ -20,13 +20,12 @@ addForm.addEventListener('submit', function(f){
   doneBtn.appendChild(p);
 
   deleteBtn.textContent = 'X';
-  p.textContent = 'V';
+  doneBtn.children[0].textContent = 'V';
   taskName.textContent = value;
 
   taskName.classList.add('list-border');
   deleteBtn.classList.add('delete-button', 'no-print');
   doneBtn.classList.add('done-button');
-
 
   list.appendChild(li);
 });

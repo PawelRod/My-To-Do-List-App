@@ -1,33 +1,47 @@
-// ADD TASK
+// ADD TASK & VALIDATION
 
 const addForm = document.forms['add-task'];
 const list = document.querySelector("#list ol")
-
+const value = addForm.querySelector('input[type="text"]');
 addForm.addEventListener('submit', function(f){
   f.preventDefault();
+  const valueOfValue = addForm.querySelector('input[type="text"]').value;
+  let placeholder = document.querySelector('input[type=text]');
+  if(valueOfValue == "") {
 
-  const value = addForm.querySelector('input[type="text"]').value;
+    value.style.borderBottom = ".4px solid red";
+    placeholder.classList.add('red-placeholder');
+    placeholder.placeholder = "Type text please!";
+    
+    return false;
+  } else {
+    
+    placeholder.placeholder = "Write here...";
 
-  const p = document.createElement('p');
-  const li = document.createElement('li');
-  const taskName = document.createElement('div');
-  const deleteBtn = document.createElement('span');
-  const doneBtn = document.createElement('span');
-
-  li.appendChild(taskName);
-  li.appendChild(deleteBtn);
-  li.appendChild(doneBtn);
-  doneBtn.appendChild(p);
-
-  deleteBtn.textContent = 'X';
-  doneBtn.children[0].textContent = 'V';
-  taskName.textContent = value;
-
-  taskName.classList.add('list-border');
-  deleteBtn.classList.add('delete-button', 'no-print');
-  doneBtn.classList.add('done-button');
-
-  list.appendChild(li);
+    const p = document.createElement('p');
+    const li = document.createElement('li');
+    const taskName = document.createElement('div');
+    const deleteBtn = document.createElement('span');
+    const doneBtn = document.createElement('span');
+  
+    li.appendChild(taskName);
+    li.appendChild(deleteBtn);
+    li.appendChild(doneBtn);
+    doneBtn.appendChild(p);
+  
+    deleteBtn.textContent = 'X';
+    doneBtn.children[0].textContent = 'V';
+    taskName.textContent = valueOfValue;
+  
+    taskName.classList.add('list-border');
+    deleteBtn.classList.add('delete-button', 'no-print');
+    doneBtn.classList.add('done-button');
+    
+    value.style.borderBottom = ".4px solid rgb(153, 153, 120)";
+    placeholder.classList.remove('red-placeholder');
+    value.value = "";
+    list.appendChild(li);
+  }
 });
 
 

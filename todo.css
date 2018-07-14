@@ -208,10 +208,10 @@ li {
     color: red;
     transition: all .5s;
 }
-.delete-button:hover {
+/* .delete-button:hover {
     transition: all .5s;
     font-size: 22px;
-}
+} OL ELEMENTS DISSAPEAR */ 
 span.done-button {
     position: absolute;
     left: -57px;
@@ -294,10 +294,14 @@ input[type=text],
     font-size: 17px;
     flex:1
 }
+
 input[type=text]:focus {
     border-bottom: .4px solid;
 }
 ::placeholder {
     text-align: center;
     color: rgb(153, 153, 120);
+}
+.red-placeholder::placeholder {
+    color: red;
 }

@@ -1,22 +1,35 @@
 // ADD TASK & VALIDATION
 
+const html = document.querySelector('html');
+let placeholder = document.querySelector('input[type=text]');
+
+html.onclick = function() {
+  value.style.borderBottom = ".4px solid black";
+  placeholder.classList.remove('red-placeholder');
+  placeholder.placeholder = "Write here...";
+}
+
 const addForm = document.forms['add-task'];
 const list = document.querySelector("#list ol")
 const value = addForm.querySelector('input[type="text"]');
+
 addForm.addEventListener('submit', function(f){
+
   f.preventDefault();
+
   const valueOfValue = addForm.querySelector('input[type="text"]').value;
-  let placeholder = document.querySelector('input[type=text]');
+
   if(valueOfValue == "") {
 
     value.style.borderBottom = ".4px solid red";
     placeholder.classList.add('red-placeholder');
-    placeholder.placeholder = "Type text please!";
+    placeholder.placeholder = "Type text first!";
     
     return false;
+
   } else {
-    
-    placeholder.placeholder = "Write here...";
+
+    value.value = "";
 
     const p = document.createElement('p');
     const li = document.createElement('li');
@@ -36,11 +49,9 @@ addForm.addEventListener('submit', function(f){
     taskName.classList.add('list-border');
     deleteBtn.classList.add('delete-button', 'no-print');
     doneBtn.classList.add('done-button');
-    
-    value.style.borderBottom = ".4px solid rgb(153, 153, 120)";
-    placeholder.classList.remove('red-placeholder');
-    value.value = "";
+
     list.appendChild(li);
+
   }
 });
 

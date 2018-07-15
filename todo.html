@@ -8,18 +8,15 @@
         <link rel="stylesheet" type="text/css" media="screen" href="todo.css">
         <link href="todo.css" media="print" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     </head>
     <body>
         <div class="logo-top">
-                <div class="logo">
-                    <img src="img/logo.png">
-                </div>
-                <!-- <h2>
-                    To-Do List
-                </h2>
-                <h2>
-                    Don't forget! Make things happen!
-                </h2> -->
+            <div class="logo">
+                <img src="img/piece-of-paper.png">
+                <p class="logo-text-top">Don't forget!</p>
+                <p class="logo-text-bottom">Make things happen!</p>
+            </div>
         </div>
         <div id="invisible-wrapper"  class="no-print">
             <canvas id="canvas" width="400px" height="400px">
@@ -34,8 +31,18 @@
             <div class="note-desk-red">
                 <img src="img/note-desk-red.png">
             </div>
+            <div class="to-do-circle">
+                <img src="img/logo.png">
+            </div>
             <div class="note-desk-green">
                 <img src="img/note-desk-green.png">
+                <p>- bread,<br>- salad,<br>- milk - beers,<br>- orange juice,<br>- ketchup.</p>
+                <div class="cross-out-line-1"></div>
+                <div class="cross-out-line-2"></div>
+            </div>
+            <div class="postcard">
+                <img src="img/postcard.png">
+                <img class="pin-2" src="img/pin-2.png">
             </div>
         </div>
         <div id="wrapper">
@@ -69,6 +76,9 @@
                 <input type="text" placeholder="Write here..." />
             </form>
         </div>
+        <footer>
+            
+        </footer>
         <script src="todo.js"></script>
         <script type="text/javascript" src="html2canvas.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>

@@ -23,21 +23,36 @@ button:focus {
 /* LOGO TOP */
 
 .logo-top {
-    font-size: 20px;
+    font-size: 22px;
     margin: 60px 10px -20px 10px;
-    color: rgb(33, 25, 99);
     height: 214px;
+    color: black;
 }
 .logo {
     position: relative;
-    top: -150px;
+    top: -55px;
     transform: translateX(-50%);
     left: 50%;
-    width: 400px;
+    width: 535px;
 }
 .logo img {
-    width: 400px;
+    width: auto;
     height: auto;
+}
+.logo p {
+    position: absolute;
+    transform: rotate(-1.5deg);
+    font-family: 'Gaegu', cursive;
+    letter-spacing: 1px;
+}
+.logo-text-top {
+    top: 72px;
+    left: 130px;
+}
+.logo-text-bottom {
+    top: 115px;
+    right: 120px;
+
 }
 
 /*ELEMENTS AROUND POSITIONING*/
@@ -85,10 +100,17 @@ div.note-desk-green {
 }
 .note-desk-red {
     right: -420px;
-    top: 20%;
+    top: -150px;
+}
+.to-do-circle, .to-do-circle img {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    right: -225px;
+    top: -90px;
 }
 .note-desk-green {
-    left: -420px;
+    left: -380px;
     bottom: 80px;
 }
 .note-desk-green img {
@@ -97,6 +119,44 @@ div.note-desk-green {
     max-width: 270px;
     max-height: 270px;
 }
+.note-desk-green p {
+    position: absolute;
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+    top: 58px;
+    left: 50px;
+    transform: rotate(-5deg);
+}
+.note-desk-green div {
+    position: absolute;
+    border-top: 1.5px solid black;
+    height: 14px;
+}
+.note-desk-green div.cross-out-line-1 {
+    width: 38px;
+    bottom: 113px;
+    left: 67px;
+    border-radius: 50%;
+    transform: rotate(8deg);
+}
+.note-desk-green div.cross-out-line-2 {
+    width: 43px;
+    bottom: 111px;
+    left: 67px;
+    transform: rotate(-15deg);
+}
+.postcard img {
+    position: absolute;
+    right: -800px;
+    top: 270px;
+}
+.postcard .pin-2 {
+    position: absolute;
+    right: -440px;
+    top: 290px;
+    width: 42px;
+    height: 53px;
+}
 
 /* WRAPPER */
 
@@ -104,10 +164,12 @@ div#wrapper {
     position: relative;
     width: 90%;
     max-width: 850px;
-    min-height: 720px;
+    /* height: 100% auto; */
+    min-height: 680px;
     background: rgb(255, 255, 236);
     border: .7px solid black;
     margin: 0 auto;
+    margin-bottom: 80px;
     box-shadow: 10px 10px 6px rgba(0,0,0,0.6);
     padding: 40px 30px;
     font-family: 'Gloria Hallelujah', cursive;

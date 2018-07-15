@@ -170,18 +170,18 @@ h1 .double-underline {
 /* LI STUFF */
 
 ol {
-    padding: 0 0 0 60px;
+    padding: 0 0 0 45px;
     margin: 0 0 40px 0;
 }
 li {
     position: relative;
-    padding-left: 20px;
     margin: 25px 0;
 }
 .list-border {
     border-bottom: .7px solid black;
-    width: calc(100% - 38px);
-    max-width: 700px;
+    width: calc(100% - 32px);
+    max-width: 720px;
+    word-wrap: break-word;
 }
 .checked {  /*JS*/
     text-decoration: line-through;
@@ -206,43 +206,46 @@ li {
 .delete-button {
     right: 0;
     color: red;
-    transition: all .5s;
+    transition: all .3s;
+    opacity: 1;
+    z-index: 99999;
 }
-/* .delete-button:hover {
-    transition: all .5s;
+.delete-button:hover {
+    transition: all .3s;
     font-size: 22px;
-} OL ELEMENTS DISSAPEAR */ 
-span.done-button {
+    opacity: 1 !important;
+}
+.done-button {
     position: absolute;
-    left: -57px;
+    left: -45px;
     height: 20px;
     width: 20px;
     border: 2px green solid;
     z-index: 9999;
     background-color: none;
 }
-.done-button p {
-    left: 1.5px;
-    top: -9.5px;
+li p {
     display: none;
-    /* z-index: 1; */
+    z-index: -1;
 }
-p.green-initial-display { /*JS*/
-    margin: 0;
+ p.green-initial-display { /*JS*/
     position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0;
+    left: -40px;
     color: green;
     display: block;
-    z-index: 9999;
     z-index: -1;
     opacity: 0.7;
-    /* visibility: hidden; */
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
 }
 
 #add-task {
     display:flex;
-    /* flex-direction:row; */
     align-self: flex-end;
-    /* justify-content: flex-end; */
     position: absolute;
     width: 100%;
     left: 20px;
@@ -284,8 +287,6 @@ input[type=text],
 ::placeholder {
     height: 40px;
     width:calc(100% - 190px);
-    /* min-width: 790px; */
-    /* margin: 0 auto; */
     margin: 0px 87px 0px 10px;
     border: none;
     border-bottom: .4px solid black;
@@ -304,4 +305,92 @@ input[type=text]:focus {
 }
 .red-placeholder::placeholder {
     color: red;
+}
+
+
+/* RWD */
+
+@media only screen and (max-width: 420px) {
+    .logo-top {
+        margin: 0px 10px -80px 10px;
+    }
+    .logo {
+        top: -40px;
+        width: 200px;
+        height: 200px;
+    }
+    .logo img {
+        width: 200px;
+        height: auto;
+    }
+    div#wrapper {
+        padding: 10px 15px;
+        min-height: 420px;
+    }
+    #invisible-wrapper {
+        min-height: 420px;
+    }
+    .datetime {
+        font-size: 12px;
+    }
+    .pin {
+        top: 12px;
+        width: 34px;
+        height: 45px;
+    }
+    h1 {
+        font-size: 22px;
+        margin: 5px;
+    }
+    h1 .double-underline {
+        top: -6.7px;
+        left: -10px;
+        width: 80px;
+    }
+    .nav-icons {
+        width: 20px;
+        height: 20px;
+        margin: 7px 0 0 18px;
+    }
+    li {
+        margin: 0px 0px 10px 0px;
+    }
+    .list-border {
+        border-bottom: .4px solid black;
+        font-size: 10px;
+        width: calc(100% - 22px);
+        max-width: 720px;
+    }
+    ol {
+        padding: 0 0 0 27px;
+        margin: 0 0 40px 0;
+    }
+    .done-button {
+        left: -27px;
+        height: 17px;
+        width: 17px;
+        border: 2px green solid;
+    }
+    p.green-initial-display { /*JS*/
+        left: -24px;
+    }
+    input[type=text],
+    ::placeholder {
+        height: 22px;
+        width:calc(100% - 190px);
+        margin: 0px 62px 0px 0px;
+        font-size: 10px;
+    }
+    #add-task {
+        width: 100%;
+        left: 20px;
+        bottom: 15px;
+    }
+    #add-task button {
+        right: 28px;
+        bottom: 0px;
+        width: 30px;
+        height: 30px;
+    }
+
 }

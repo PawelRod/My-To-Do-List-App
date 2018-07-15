@@ -40,10 +40,10 @@ addForm.addEventListener('submit', function(f){
     li.appendChild(taskName);
     li.appendChild(deleteBtn);
     li.appendChild(doneBtn);
-    doneBtn.appendChild(p);
+    li.appendChild(p);
   
     deleteBtn.textContent = 'X';
-    doneBtn.children[0].textContent = 'V';
+    doneBtn.nextElementSibling.textContent = 'V';
     taskName.textContent = valueOfValue;
   
     taskName.classList.add('list-border');
@@ -73,9 +73,24 @@ const ol = document.querySelector('ol');
 ol.addEventListener('click', function(d){
   if(d.target.className == 'done-button') {
     const li = d.target.parentElement;
-    const v = d.target.children[0];
+    const v = d.target.nextElementSibling;
     li.classList.toggle('checked');
     v.classList.toggle('green-initial-display');
+  }
+});
+
+
+// CLEAR 'EXAMPLE' ELEMENT FROM LIST
+
+const button = document.querySelector('button');
+const exampleTask = document.querySelector('li.example-task')
+
+button.addEventListener('click', function(){
+  if(ol.children[0].className == 'example-task' || ol.children[0].className == 'example-task checked'){
+    exampleTask.classList.remove('example-task');
+    ol.removeChild(exampleTask);
+  } else {
+    return true;
   }
 });
 

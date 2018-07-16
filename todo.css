@@ -20,6 +20,33 @@ button:focus {
     outline: none;
 }
 
+/* LOADING PAGE */
+
+.loading-page {
+    position: absolute;
+    background: black;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 99999;
+    overflow: hidden;
+    animation: loading-fade-out 5s normal forwards;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+.animate-logo {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+@keyframes loading-fade-out {
+    0% {opacity: 1;}
+    30% {opacity: 1; min-height: 100%;}
+    99% {opacity: 0; min-height: 100%;}
+    100% {opacity: 0; min-height: 0px;}
+}
+
+
 /* LOGO TOP */
 
 .logo-top {
@@ -53,6 +80,13 @@ button:focus {
     top: 115px;
     right: 120px;
 }
+.logo .mylogo {
+    position: absolute;
+    top: 15px;
+    right: 440px;
+    width: 80px;
+    height: 80px;
+}
 
 /*ELEMENTS AROUND POSITIONING*/
 
@@ -62,7 +96,7 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
     max-width: 850px;
-    min-height: 600px;
+    min-height: 580px;
     margin: 0 auto;
     padding: 20px 30px;
 }
@@ -147,7 +181,7 @@ div.note-desk-green {
 .postcard img {
     position: absolute;
     right: -800px;
-    top: 240px;
+    top: 220px;
 }
 .postcard .pin-2 {
     position: absolute;
@@ -164,11 +198,11 @@ div#wrapper {
     width: 90%;
     max-width: 850px;
     /* height: 100% auto; */
-    min-height: 600px;
+    min-height: 580px;
     background: rgb(255, 255, 236);
     border: .7px solid black;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
     box-shadow: 10px 10px 6px rgba(0,0,0,0.6);
     padding: 40px 30px;
     font-family: 'Gloria Hallelujah', cursive;
@@ -268,13 +302,10 @@ li {
     right: 0;
     color: red;
     transition: all .3s;
-    opacity: 1;
-    z-index: 99999;
 }
 .delete-button:hover {
     transition: all .3s;
     font-size: 22px;
-    opacity: 1 !important;
 }
 .done-button {
     position: absolute;
@@ -379,19 +410,52 @@ footer {
     right: 0;
     left: 0;
     background: url(img/footer-1.png) repeat center center;
-    /* background-size: 100%; */
-    border-top: 3px solid black;
+    filter: drop-shadow(0 -3px 15px black);
+    border-top: 1px solid black;
 }
 footer p {
     font-family: 'Cormorant Unicase', serif;
-    text-align: center;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
-    /* margin: 16px 0; */
     margin: 0 auto;
     line-height: 57px;
 }
+.social-info {
+    position: relative;
+    width: 430px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.social-info a {
+    background: url(img/GitHub-Mark/GitHub-Mark-32px.png) center center no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 0px;
+    transition: all .7s ease-in-out;
+}
+.social-info a:hover {
+    background: url(img/GitHub-Mark/GitHub-Mark-32px-white.png) center center no-repeat;
+    transition: all .7s ease-in-out;
+}
+.footer-pencil {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+.footer-pencil img {
+    position: absolute;
+    top: -27px;
+    left: -100px;
+}
+
 
 
 /* RWD */
@@ -420,6 +484,13 @@ footer p {
     .logo-text-bottom {
         top: 54px;
         right: 45px;
+    }
+    .logo .mylogo {
+        position: absolute;
+        top: 5px;
+        right: 230px;
+        width: 50px;
+        height: 50px;
     }
     div#wrapper {
         padding: 10px 15px;
@@ -489,6 +560,28 @@ footer p {
         bottom: 0px;
         width: 30px;
         height: 30px;
+    }
+    footer {
+        height: 40px;
+    }
+    .footer-pencil img {
+        top: -20px;
+        height: 20px;
+        width: 580px;
+    }
+    footer p {
+        font-size: 15px;
+        letter-spacing: 0px;
+        line-height: 57px;
+    }
+    .social-info {
+        width: 300px;
+    }
+    .social-info a {
+        width: 32px;
+        height: 32px;
+        top: 10px;
+        right: 0px;
     }
 
 }

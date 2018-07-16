@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>To-Do App</title>
+        <title>To-Do List by Paweł_R</title>
         <meta name="viewport" content="width=device-width, minimum-scale=1"> <!--initial-scale=1-->
         <link rel="stylesheet" type="text/css" media="screen" href="todo.css">
         <link href="todo.css" media="print" rel="stylesheet" type="text/css">
@@ -12,11 +12,17 @@
         <link href="https://fonts.googleapis.com/css?family=Cormorant+Unicase" rel="stylesheet">
     </head>
     <body>
+        <div class="loading-page">
+            <div class="animate-logo">
+                <img src="img/logoblack.png">
+            </div>
+        </div>
         <div class="logo-top no-print">
             <div class="logo">
                 <img src="img/piece-of-paper.png">
                 <p class="logo-text-top">Don't forget!</p>
                 <p class="logo-text-bottom">Make things happen!</p>
+                <img class="mylogo" src="img/logoblack.png">
             </div>
         </div>
         <div id="invisible-wrapper"  class="no-print">
@@ -78,7 +84,14 @@
             </form>
         </div>
         <footer class="no-print">
-            <p>2018. Written and designed by Paweł R</p>
+            <div class="social-info">
+                <p>2018. Written and designed by Paweł_R</p>
+                <a target="_blank" href="https://github.com/sirPaul1">
+                </a>
+            </div>
+            <div class="footer-pencil">
+                <img src="img/pencil.png">
+            </div>
         </footer>
         <script src="todo.js"></script>
         <script type="text/javascript" src="html2canvas.js"></script>

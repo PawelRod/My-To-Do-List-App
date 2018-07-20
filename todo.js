@@ -1,3 +1,11 @@
+// LOADING PAGE ON-LOAD
+
+const loading = document.querySelector('.loading-page');
+
+loading.addEventListener('load', function(){
+  loading;
+});
+
 // ADD TASK & VALIDATION
 
 const html = document.querySelector('html');

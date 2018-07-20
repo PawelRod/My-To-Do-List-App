@@ -1,9 +1,7 @@
 // LOADING PAGE ON-LOAD
 
-const loading = document.querySelector('.loading-page');
-
-loading.addEventListener('load', function(){
-  loading;
+window.addEventListener('load', function(){
+  const loading = document.querySelector('.loading-page');
 });
 
 // ADD TASK & VALIDATION

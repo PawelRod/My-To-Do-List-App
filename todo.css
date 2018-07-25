@@ -10,7 +10,7 @@ html {
 body {
     min-height: 100vh;
     position: relative;
-    background: url(img/cork-board.jpg) repeat center center;
+    background: url(img/cork-board.jpg) repeat top center;
     background-size: 1280px auto;
     margin: 0;
     padding: 1px;
@@ -25,11 +25,27 @@ button:focus {
 
 /* LOADING PAGE */
 
-.loading-page {
+.loading-page-bg {
     position: fixed;
     background: black;
-    min-width: 100%;
-    min-height: 100%;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    z-index: 99999;
+    animation: bg-fade-out 8s normal forwards;
+    animation-iteration-count: 1;
+}
+@keyframes bg-fade-out {
+    0% {opacity: 1;}
+    90% {opacity: 1;}
+    99% {opacity: 0;}
+    100% {opacity: 0; z-index: -1;}
+}
+
+.loading-page {
+    position: fixed;
+    background: none;
     top: -1px;
     bottom: -1px;
     left: -1px;
@@ -41,21 +57,27 @@ button:focus {
     opacity: 1;
 }
 @keyframes loading-fade-out {
-    0% {opacity: 1;}
-    30% {opacity: 1; min-height: 100%;}
-    90% {opacity: 1; min-height: 100%;}
-    99% {opacity: 0; min-height: 100%;}
-    100% {opacity: 0; min-height: 0px; z-index: -1;}
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    30% {opacity: 1;}
+    90% {opacity: 1;}
+    99% {opacity: 0;}
+    100% {opacity: 0; z-index: -1;}
 }
-.animate-logo img{
-    position: absolute;
+.animate-logo{
+    position: relative;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    animation: logo-moving 2s normal infinite;
-    /* animation-iteration-count: 3; */
+    animation: logo-moving 7.4s normal forwards;
+    width: 226px;
+    height: 226px;
+    /* animation-iteration-count: 4; */
 }
-.animate-logo p {
+.loading-text {
+    font-family: 'Poor Story', cursive;
+    letter-spacing: 3px;
+    font-weight: 600;
     position: absolute;
     top: 65%;
     left: 50%;
@@ -63,11 +85,99 @@ button:focus {
     font-size: 40px;
     color: white;
     text-align: center;
+    animation: loading-text 7.4s normal forwards;
 }
-@keyframes logo-moving {
+@keyframes loading-text {
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    80% {opacity: 1;}
+    85% {opacity: 1; top: 65%}
+    100% {opacity: 1; top: 150%;}
+}
+/* @keyframes logo-moving {
     0% {top: 50%}
     50% {top: 40%}
     100% {top: 50%}
+} */
+@keyframes logo-moving {
+    0% {top: 40%}
+    10% {top: 50%}
+    20% {top: 40%}
+    30% {top: 50%}
+    40% {top: 40%}
+    50% {top: 50%}
+    60% {top: 40%}
+    70% {top: 50%}
+    80% {top: 30%}
+    90% {top: 62%; opacity: 1}
+    100% {top: -50%; opacity: 0}
+}
+.border-top {
+    position: absolute;
+    border-radius: 50%;
+    border: 8px rgba(255,255,255,0) solid;
+    border-top: 8px white solid;
+    width: 226px;
+    height: 226px;
+    z-index: 9999;
+    animation: border-top-fadein 8s normal forwards;
+    animation-iteration-count: 1;
+}
+@keyframes border-top-fadein {
+    0% {opacity: 0; top: -20px; width: 300px; height: 300px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    20% {opacity: 1; top: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    100% {opacity: 1; top: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+}
+.border-right {
+    position: absolute;
+    border-radius: 50%;
+    border: 8px rgba(255,255,255,0) solid;
+    border-right: 8px white solid;
+    width: 226px;
+    height: 226px;
+    z-index: 9999;
+    animation: border-right-fadein 8s normal forwards;
+    animation-iteration-count: 1;
+}
+@keyframes border-right-fadein {
+    0% {opacity: 0;}
+    20% {opacity: 0; right: -20px; width: 300px; height: 300px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    40% {opacity: 1; right: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    100% {opacity: 1; right: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+}
+.border-bottom {
+    position: absolute;
+    border-radius: 50%;
+    border: 8px rgba(255,255,255,0) solid;
+    border-bottom: 8px white solid;
+    width: 226px;
+    height: 226px;
+    z-index: 9999;
+    animation: border-bottom-fadein 8s normal forwards;
+    animation-iteration-count: 1;
+}
+@keyframes border-bottom-fadein {
+    0% {opacity: 0;}
+    40% {opacity: 0; bottom: -20px; width: 300px; height: 300px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    60% {opacity: 1; bottom: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    100% {opacity: 1; bottom: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+}
+.border-left {
+    position: absolute;
+    border-radius: 50%;
+    border: 8px rgba(255,255,255,0) solid;
+    border-left: 8px white solid;
+    width: 226px;
+    height: 226px;
+    z-index: 9999;
+    animation: border-left-fadein 8s normal forwards;
+    animation-iteration-count: 1;
+}
+@keyframes border-left-fadein {
+    0% {opacity: 0;}
+    60% {opacity: 0; left: -20px; width: 300px; height: 300px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    80% {opacity: 1; left: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
+    100% {opacity: 1; left: 0px; width: 226px; height: 226px; transform: translate(-50%, -50%); left: 50%; top: 50%;}
 }
 
 
@@ -383,6 +493,7 @@ li p {
     border: 2px #FDFFEB solid;
     transition: all .5s;
     color: rgb(129, 129, 129);
+    transform: rotate(0deg);
 }
 #add-task button div {
     position: relative;
@@ -491,14 +602,27 @@ footer p {
         display: none;
     }
     div#wrapper {
-        padding: 10px 15px;
+        padding: 40px 30px;
         min-height: calc(100vh - 376px);
         height: calc(auto - 376px);
         max-height: auto;
     }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 468px) {
+    @keyframes logo-moving {
+        0% {top: 30%}
+        10% {top: 40%}
+        20% {top: 30%}
+        30% {top: 40%}
+        40% {top: 30%}
+        50% {top: 40%}
+        60% {top: 30%}
+        70% {top: 40%}
+        80% {top: 20%}
+        90% {top: 59%; opacity: 1}
+        100% {top: -50%; opacity: 0}
+    }
     .logo-top {
         margin: 0px 10px -80px 10px;
     }

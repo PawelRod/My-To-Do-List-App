@@ -58,7 +58,14 @@ addForm.addEventListener('submit', function(f){
 
     list.appendChild(li);
 
+    //SCROLL TO BOTTOM IF BUTTON SUBMIT
+    window.scrollTo(0,document.body.scrollHeight);
+
   }
+});
+//SCROLL TO BOTTOM IF INPUT CLICKED
+value.addEventListener('click', function(){
+  window.scrollTo(0,document.body.scrollHeight);
 });
 
 
